@@ -26,7 +26,16 @@ sauvegarder_base()
 	if [ -f tasks.txt ]
 	then
 		cp tasks.txt tasks_backup.txt
-		"Sauvegarde creee : tasks_backup.txt"
+		echo "Sauvegarde creee : tasks_backup.txt"
 
 fi
+}
+restaurer_base()
+{
+	if [ -f tasks_backup.txt ]
+	then
+		cp tasks_backup.txt tasks.txt
+		echo "Base restauree depuis la sauvegarde"
+	else
+		echo " Aucune sauvegarde disponible" 
 }
