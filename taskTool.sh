@@ -54,5 +54,24 @@ marquer_terminer()
 	echo "tache marquee finie"
 }
 
+afficher_tache()
+{
+	if [ ! -f tasks.txt ]; then
+		echo  "Aucune tache disponible "
+		return
+	fi
 
-} 
+	echo "ID | DESCRIPTION | STATUT"
+
+	while IFS = "|" read id description statut 
+	do 
+
+		if ["$statut" -eq 1]; then
+			echo  "$id  | $description | terminee "
+		else
+			echo  "$id  | $decription  | EN cours "
+		fi
+
+	done < tasks.txt
+
+}
