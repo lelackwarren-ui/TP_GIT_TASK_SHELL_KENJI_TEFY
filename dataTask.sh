@@ -37,7 +37,8 @@ restaurer_base()
 		cp tasks_backup.txt tasks.txt
 		echo "Base restauree depuis la sauvegarde"
 	else
-		echo " Aucune sauvegarde disponible" 
+		echo " Aucune sauvegarde disponible"
+	fi 
 }
 supprimer_base()
 {
@@ -48,4 +49,6 @@ supprimer_base()
 		then
 			rm tasks.txt
 			echo "Base supprime."
+		fi
+	fi
 }
