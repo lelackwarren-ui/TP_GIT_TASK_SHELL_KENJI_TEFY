@@ -39,3 +39,13 @@ restaurer_base()
 	else
 		echo " Aucune sauvegarde disponible" 
 }
+supprimer_base()
+{
+	if [ -f tasks.txt ]
+	then
+		read -p "Supprimer la base ? (oui/non) : " rep
+		if [ "$rep" = "oui" ]
+		then
+			rm tasks.txt
+			echo "Base supprime."
+}
