@@ -10,3 +10,13 @@ initialiser_base()
 		 echo "le fichier a ete creer"
 fi
 }
+
+afficher_toutes_taches()
+{
+	if [ -f tasks.txt ]
+	then
+		cat tasks.txt
+	else
+		echo "Base non initialisee"
+fi
+}
