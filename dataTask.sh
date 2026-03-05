@@ -20,3 +20,13 @@ afficher_toutes_taches()
 		echo "Base non initialisee"
 fi
 }
+
+sauvegarder_base()
+{
+	if [ -f tasks.txt ]
+	then
+		cp tasks.txt tasks_backup.txt
+		"Sauvegarde creee : tasks_backup.txt"
+
+fi
+}
