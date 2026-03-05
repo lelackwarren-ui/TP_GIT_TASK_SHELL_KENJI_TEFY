@@ -11,5 +11,22 @@ ajouter_tache()
 		id=$((lignes + 1))
 	fi
 
-	echo "$id  | $description | 0" >> tasks.txt
+	echo " $id  | $description | 0" >> tasks.txt
+}
+ 
+suprimer_tache()
+{
+	echo "Entrer l'Id de la tache aqq suprimer :"
+	read id
+
+	while IFS= read -r ligne
+	do
+		ligne_id = $(echo $ligne | cut -d "|" -f1)
+
+		if [" $ligne_id " != " $id "]; then
+			echo " $ligne " >> temp.txt
+	done < tasks.txt
+	mv temp.txt tasks.txt
+
+	echo "Tache suprimee"
 }
