@@ -1,0 +1,15 @@
+#!/bin/bash
+ajouter_tache()
+{
+	echo "Entrez une description de vos taches a faire :"
+	read descripition
+
+	if [ ! -f tasks.txt ]; then
+		id = 1
+	else
+		lignes=$(wc -l < tasks.txt)
+		id=$((lignes + 1))
+	fi
+
+	echo "$id  | $description | 0" >> tasks.txt
+}
