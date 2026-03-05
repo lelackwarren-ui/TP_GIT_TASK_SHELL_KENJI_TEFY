@@ -30,3 +30,29 @@ suprimer_tache()
 
 	echo "Tache suprimee"
 }
+
+marquer_terminer()
+{
+	echo "Entrer l'Id de la tache terminer :"
+	read id
+
+	while IFS = read -r ligne
+	do
+		ligne_id = $(echo  $ligne | cut -d "|" -f1)
+
+		if [ "$ligne_id" = "$id" ]; then
+	`		description = $(echo $ligne | cut -d "|" -f2)
+			echo "$id | $description | 1" >> temp.txt
+		else
+			echo "$ligne" >> temp.txt
+		fi
+
+	done < tasks.txt
+
+
+	mv temp.txt tasks.txt
+	echo "tache marquee finie"
+}
+
+
+} 
